@@ -11,4 +11,8 @@
     <string name="button_name">Click me</string>
     <string name="button_loading">We are loading </string>
     <string name="title_activity_detail">DetailActivity</string>
+    <string name="download_in_progress">Downloading in Progess</string>
+    <string name="notifiction_title_complete">Download Complete</string>
+    <string name="notification_content_complete">Click to open activity</string>
+    <string name="notification_button_open">Open</string>
 </resources>
