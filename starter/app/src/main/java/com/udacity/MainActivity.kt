@@ -51,7 +51,6 @@ class MainActivity : AppCompatActivity(), TimeAnimator.TimeListener {
          * Look at Button state use with custom button and drawable background
          */
         textLabel = findViewById<View>(R.id.labelTextView) as TextView
-        textLabel.text = "Click to Download"
 
         /**
          *  Refactor as Animation Setup

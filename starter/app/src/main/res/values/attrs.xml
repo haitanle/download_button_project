@@ -4,6 +4,6 @@
     <declare-styleable name="LoadingButton">
     <!-- set the attribute for the buttons attribute name and type-->
         <attr name="buttonText" format="string" />
-        <attr name="color" format="color"/>
+        <attr name="textColor" format="color"/>
     </declare-styleable>
 </resources>

@@ -17,7 +17,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_height="60dp"
         android:layout_margin="20dp"
-        app:buttonText="Download"
+        app:buttonText="Click to Load"
+        app:textColor="#FAF6F6"
         android:background="@drawable/button_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

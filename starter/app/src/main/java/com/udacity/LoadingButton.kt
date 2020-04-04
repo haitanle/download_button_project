@@ -3,6 +3,7 @@ package com.udacity
 import android.animation.ValueAnimator
 import android.content.Context
 import android.graphics.Canvas
+import android.graphics.Color
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.view.View
@@ -48,7 +49,10 @@ class LoadingButton @JvmOverloads constructor(
             // get and sync the loadingButton text attribute
 
             var textValue = a.getString(R.styleable.LoadingButton_buttonText)
+            var textColor = a.getColor(R.styleable.LoadingButton_textColor, Color.BLACK)
+
             textLabel.setText(textValue)
+            textLabel.setTextColor(textColor)
 
         }finally{
 
