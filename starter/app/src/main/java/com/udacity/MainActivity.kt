@@ -7,19 +7,15 @@ import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
 import android.graphics.BitmapFactory
-import android.graphics.Color
 import android.graphics.drawable.ClipDrawable
-import android.graphics.drawable.Icon
 import android.graphics.drawable.LayerDrawable
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.view.View
-import android.widget.RemoteViews
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.app.NotificationBuilderWithBuilderAccessor
 import androidx.core.app.NotificationCompat
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_main.*
@@ -85,6 +81,7 @@ class MainActivity : AppCompatActivity(), TimeAnimator.TimeListener {
         }
     }
 
+
     /**
      * Set notification for download when completed
      */
@@ -129,8 +126,7 @@ class MainActivity : AppCompatActivity(), TimeAnimator.TimeListener {
         mClipDrawable.setLevel(mCurrentLevel)
 
         if (mCurrentLevel >= MAX_LEVEL){
-            mAnimator.cancel()
-            textLabel.text = "Complete"
+            mCurrentLevel = 0
         }else{
             mCurrentLevel = Math.min(MAX_LEVEL, mCurrentLevel + LEVEL_INCREMENT)
         }
@@ -163,6 +159,8 @@ class MainActivity : AppCompatActivity(), TimeAnimator.TimeListener {
             val id = intent?.getLongExtra(DownloadManager.EXTRA_DOWNLOAD_ID, -1)
 
             if (downloadID==id){
+                mAnimator.cancel()
+                textLabel.text = "Complete"
                 notificationManager.notify(1234, builder.build())
             }
         }
