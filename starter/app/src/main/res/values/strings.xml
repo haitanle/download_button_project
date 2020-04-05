@@ -15,4 +15,8 @@
     <string name="notifiction_title_complete">Download Complete</string>
     <string name="notification_content_complete">Click to open activity</string>
     <string name="notification_button_open">Open</string>
+    <string name="downloading_text">Downloading</string>
+    <string name="complete_text">Complete</string>
+    <string name="download_complete_text">Download Complete</string>
+    <string name="download_text">Download</string>
 </resources>

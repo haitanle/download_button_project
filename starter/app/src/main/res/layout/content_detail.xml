@@ -16,7 +16,7 @@
         android:id="@+id/downloadText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Download Complete" />
+        android:text="@string/download_complete_text" />
 
 
 </androidx.constraintlayout.motion.widget.MotionLayout>
