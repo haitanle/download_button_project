@@ -12,7 +12,7 @@ A notification will be sent once the download is complete. When a user clicks on
 
 ## Getting Started
 
-Instructions for how to get a copy of the project running on your local machine.
+Git clone project codes onto local machine into Android Studio.
 
 ### Dependencies
 
@@ -28,7 +28,7 @@ Instructions for how to get a copy of the project running on your local machine.
 
 ### Installation
 
-Step by step explanation of how to get a dev environment running.
+Build and run project on emulator.
 
 List out the steps:
 
@@ -41,27 +41,10 @@ List out the steps:
 6. Click on "Run" button in Android Studio to install the project on the phone or emulator
 ```
 
-## Testing
-
-Explain the steps needed to run any automated tests
-
-### Break Down Tests
-
-Explain what each test does and why
-
-```
-Examples here
-```
-## Project Instructions
-
-This section should contain all the student deliverables for this project.
-
 ## Built With
 
 * [Android Studio](https://developer.android.com/studio) - Default IDE used to build android apps
 * [Kotlin](https://kotlinlang.org/) - Default language used to build this project
-
-Include all items used to build project.
 
 ## License
 Please review the following [license agreement](https://bumptech.github.io/glide/dev/open-source-licenses.html)

@@ -23,15 +23,6 @@ class LoadingButton @JvmOverloads constructor(
     // extends the View class
 ) : ConstraintLayout(context, attrs, defStyleAttr) {
 
-    private var widthSize = 10
-    private var heightSize = 10
-
-    private val valueAnimator = ValueAnimator()
-
-    private var buttonState: ButtonState by Delegates.observable<ButtonState>(ButtonState.Completed) { p, old, new ->
-
-    }
-
     init {
 
         // initialize the inflater
@@ -60,19 +51,5 @@ class LoadingButton @JvmOverloads constructor(
             a.recycle()
         }
     }
-
-    // Override on create custom component/viewgroup
-//    override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
-//        val minw: Int = paddingLeft + paddingRight + suggestedMinimumWidth
-//        val w: Int = resolveSizeAndState(minw, widthMeasureSpec, 1)
-//        val h: Int = resolveSizeAndState(
-//            MeasureSpec.getSize(w),
-//            heightMeasureSpec,
-//            0
-//        )
-//        widthSize = w
-//        heightSize = h
-//        setMeasuredDimension(w, h)
-//    }
 
 }

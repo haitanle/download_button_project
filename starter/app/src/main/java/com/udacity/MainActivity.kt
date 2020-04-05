@@ -29,7 +29,6 @@ class MainActivity : AppCompatActivity(), TimeAnimator.TimeListener {
     private lateinit var notificationManager: NotificationManager
     private lateinit var builder: NotificationCompat.Builder
     private lateinit var notificationChannel: NotificationChannel
-    private val channelId = "i.apps.notifications"
     private val description = "Download notification"
 
     // hold an instance to the Pending Intent
@@ -72,12 +71,11 @@ class MainActivity : AppCompatActivity(), TimeAnimator.TimeListener {
         // perform download when on custom.button is clicked
         custom_button.setOnClickListener {
             if (!mAnimator.isRunning){
-                textLabel.text = "Downloading"
+                textLabel.text = getString(R.string.downloading_text)
                 download()
                 mCurrentLevel = 0
                 mAnimator.start()
             }
-
         }
     }
 
@@ -96,11 +94,11 @@ class MainActivity : AppCompatActivity(), TimeAnimator.TimeListener {
         // checking if android version is greater than API 26
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
 
-            notificationChannel = NotificationChannel(channelId, description, NotificationManager.IMPORTANCE_HIGH)
+            notificationChannel = NotificationChannel(CHANNEL_ID, description, NotificationManager.IMPORTANCE_HIGH)
             notificationChannel.enableVibration(false)
             notificationManager.createNotificationChannel(notificationChannel)
 
-            builder = NotificationCompat.Builder(this, channelId)
+            builder = NotificationCompat.Builder(this, CHANNEL_ID)
                 .setContentTitle(getString(R.string.notifiction_title_complete))
                 .setContentText(getString(R.string.notification_content_complete))
                 .setSmallIcon(R.drawable.ic_launcher_background)
@@ -121,6 +119,9 @@ class MainActivity : AppCompatActivity(), TimeAnimator.TimeListener {
         }
     }
 
+    /**
+     * Update horizontal progress bar
+     */
     override fun onTimeUpdate(animation: TimeAnimator?, totalTime: Long, deltaTime: Long) {
 
         mClipDrawable.setLevel(mCurrentLevel)
@@ -132,24 +133,6 @@ class MainActivity : AppCompatActivity(), TimeAnimator.TimeListener {
         }
     }
 
-
-    //    private fun setAnimation() {
-//
-//        var valueAnimator: ValueAnimator = ValueAnimator.ofFloat(0f,-50f)
-//
-//        valueAnimator.addUpdateListener {
-//
-//            val value = it.animatedValue as Float
-//            custom_button.translationY = value
-//
-//        }
-//
-//        valueAnimator.interpolator = LinearInterpolator()
-//        valueAnimator.duration = 10
-//        valueAnimator.start()
-//    }
-
-
     private val receiver = object : BroadcastReceiver() {
 
         //Upon receiving the Broadcast message assign to the receiver object
@@ -160,7 +143,7 @@ class MainActivity : AppCompatActivity(), TimeAnimator.TimeListener {
 
             if (downloadID==id){
                 mAnimator.cancel()
-                textLabel.text = "Complete"
+                textLabel.text = getString(R.string.complete_text)
                 notificationManager.notify(1234, builder.build())
             }
         }
